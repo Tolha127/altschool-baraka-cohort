@@ -1,0 +1,249 @@
+/* Futuristic Rock Paper Scissors Game Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+:root {
+    --neon: #00f3ff;
+    --neon-pink: #ff00ff;
+    --dark-blue: #0f172a;
+    --cyber-blue: #0ea5e9;
+    --dark-purple: #4c1d95;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+}
+
+.cyber-grid {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.3) 1px, transparent 1px),
+                     linear-gradient(to right, rgba(15, 23, 42, 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.neon-border {
+    box-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.neon-pink-border {
+    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+    animation: glowPink 2s ease-in-out infinite alternate;
+}
+
+.game-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    background-image: linear-gradient(to right, var(--neon), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+}
+
+.glassmorphism {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.choice-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.choice-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon);
+}
+
+.secret-weapon-btn:hover {
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.game-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.game-board {
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.game-status {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.player-choice {
+    text-align: center;
+}
+
+.player-choice h2 {
+    color: var(--neon);
+    margin-bottom: 0.5rem;
+}
+
+.computer-choice h2 {
+    color: var(--neon-pink);
+    margin-bottom: 0.5rem;
+}
+
+.choice-display {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.result-display {
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: var(--dark-blue);
+}
+
+.win-result {
+    border: 2px solid var(--neon);
+    color: var(--neon);
+}
+
+.tie-result {
+    border: 1px solid white;
+    color: white;
+}
+
+.lose-result {
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.choices-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.weapon-btn {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 2.5rem 1rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--neon);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.weapon-btn:hover {
+    background-color: var(--cyber-blue);
+}
+
+.weapon-icon {
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.weapon-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.secret-btn {
+    background-image: linear-gradient(to right, var(--dark-purple), var(--neon-pink));
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 2px solid var(--neon-pink);
+    display: flex;
+    align-items: center;
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.secret-btn:hover {
+    background-image: linear-gradient(to right, var(--neon-pink), var(--dark-purple));
+}
+
+.secret-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    color: white;
+}
+
+.stat-item .label {
+    color: var(--neon);
+}
+
+.stat-item .losses {
+    color: var(--neon-pink);
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon); }
+    100% { box-shadow: 0 0 20px var(--neon), 0 0 30px var(--neon); }
+}
+
+@keyframes glowPink {
+    0% { box-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink); }
+    100% { box-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .game-title {
+        font-size: 4rem;
+    }
+    
+    .choices-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .player-choice {
+        text-align: left;
+    }
+    
+    .computer-choice {
+        text-align: right;
+    }
+}

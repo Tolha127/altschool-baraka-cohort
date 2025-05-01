@@ -1,16 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div> 
-        <a href="/contact-us.html">Contact Us</a> 
-        <a href="/about-us.html">About Us</a>
-        <a href="/about-us.html">Home</a>
+
+<body class="cyber-grid">
+    <div class="game-container">
+        <!-- Game Title -->
+        <h1 class="game-title">CYBER RPS</h1>
+
+        <!-- Main Game Container -->
+        <div class="game-board glassmorphism neon-border">
+            <!-- Game Status -->
+            <div class="game-status">
+                <div class="player-choice">
+                    <h2>YOUR CHOICE</h2>
+                    <div id="user-choice" class="choice-display">-</div>
+                </div>
+
+                <div id="result" class="result-display">
+                    READY TO PLAY
+                </div>
+
+                <div class="player-choice computer-choice">
+                    <h2>AI CHOICE</h2>
+                    <div id="computer-choice" class="choice-display">-</div>
+                </div>
+            </div>
+
+            <!-- Game Controls -->
+            <h3 class="text-center">SELECT YOUR WEAPON</h3>
+
+            <div class="choices-grid">
+                <button data-choice="rock" class="choice-btn weapon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="weapon-icon" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="weapon-name">ROCK</span>
+                </button>
+
+                <button data-choice="paper" class="choice-btn weapon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="weapon-icon" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span class="weapon-name">PAPER</span>
+                </button>
+
+                <button data-choice="scissors" class="choice-btn weapon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="weapon-icon" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                    <span class="weapon-name">SCISSORS</span>
+                </button>
+            </div>
+
+            <!-- Secret Weapon -->
+            <div class="flex justify-center">
+                <button data-choice="bomb" class="choice-btn secret-btn secret-weapon-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="secret-icon" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 8v8M8 12h8"></path>
+                    </svg>
+                    <span class="font-bold">SECRET WEAPON</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="stats-container glassmorphism">
+            <div class="stat-item">
+                <span class="label">WINS:</span>
+                <span id="wins" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">TIES:</span>
+                <span id="ties" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="losses">LOSSES:</span>
+                <span id="losses" class="stat-value">0</span>
+            </div>
+        </div>
     </div>
-    <h1> ABout us</h1>
+
+    <script src="Rock,paper,scissors.JS"></script>
 </body>
+
 </html>
